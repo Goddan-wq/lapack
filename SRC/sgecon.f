@@ -114,6 +114,8 @@
 *>                   RCOND = Inf, or
 *>                   the computed norm of the inverse of A is 0.
 *>                In the latter, RCOND = 0 is returned.
+*>          > 1:  if INFO = 1 + K, K > 0
+*>                then A is exactly singular and A( K, K ) = 0
 *> \endverbatim
 *
 *  Authors:
