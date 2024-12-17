@@ -153,7 +153,7 @@
 *     .. Local Scalars ..
       LOGICAL            ONENRM
       CHARACTER          NORMIN
-      INTEGER            IX, KASE, KASE1
+      INTEGER            IX, KASE, KASE1, IINFO
       DOUBLE PRECISION   AINVNM, SCALE, SL, SMLNUM, SU, HUGEVAL
       COMPLEX*16         ZDUM
 *     ..
@@ -262,6 +262,10 @@
 *
 *        Divide X by 1/(SL*SU) if doing so will not cause overflow.
 *
+         IF( IINFO .GT. 0 ) THEN
+            INFO = IINFO + 1
+            GO TO 20
+         END IF
          SCALE = SL*SU
          NORMIN = 'Y'
          IF( SCALE.NE.ONE ) THEN
