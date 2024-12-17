@@ -237,14 +237,14 @@
 *
             CALL DLATRS( 'Upper', 'No transpose', 'Non-unit', NORMIN,
      $                   N,
-     $                   A, LDA, WORK, SU, WORK( 3*N+1 ), INFO )
+     $                   A, LDA, WORK, SU, WORK( 3*N+1 ), IINFO )
          ELSE
 *
 *           Multiply by inv(U**T).
 *
             CALL DLATRS( 'Upper', 'Transpose', 'Non-unit', NORMIN, N,
      $                   A,
-     $                   LDA, WORK, SU, WORK( 3*N+1 ), INFO )
+     $                   LDA, WORK, SU, WORK( 3*N+1 ), IINFO )
 *
 *           Multiply by inv(L**T).
 *

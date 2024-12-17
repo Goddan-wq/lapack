@@ -244,14 +244,14 @@
 *
             CALL ZLATRS( 'Upper', 'No transpose', 'Non-unit', NORMIN,
      $                   N,
-     $                   A, LDA, WORK, SU, RWORK( N+1 ), INFO )
+     $                   A, LDA, WORK, SU, RWORK( N+1 ), IINFO )
          ELSE
 *
 *           Multiply by inv(U**H).
 *
             CALL ZLATRS( 'Upper', 'Conjugate transpose', 'Non-unit',
      $                   NORMIN, N, A, LDA, WORK, SU, RWORK( N+1 ),
-     $                   INFO )
+     $                   IINFO )
 *
 *           Multiply by inv(L**H).
 *
